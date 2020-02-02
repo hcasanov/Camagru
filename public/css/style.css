@@ -1,0 +1,385 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 10%;
+}
+
+#footer {
+    height: 10%;
+    min-height: 50px;
+    background-color: black;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    min-height: 300px;
+    text-align: center;
+    color: white;
+    font-size: x-large;
+    
+}
+
+#container-view {
+    height: 100%;
+    width: 100%;
+    padding-bottom: 50px;
+    padding: 20px;
+    overflow: scroll;
+}
+
+#upload_img {
+    width: 0;
+}
+
+a:hover{
+    cursor: pointer;
+    }
+
+#container-view {
+    height: 100%;
+    width: 100%;
+}
+
+.from_container {
+    padding: 100px;
+}
+
+.container_parameter {
+    padding: 100px;
+}
+
+h1 {
+    margin-bottom: 30px;
+    text-align: center;
+    padding-top: 40px;
+}
+.btn-custom {
+    margin-top: 20px;
+}
+
+.link {
+    text-decoration: underline !important;
+    color: #007bff !important;
+}
+
+.form_box {
+    height: 100%;
+    max-width: 500px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.webcam_box {
+    height: 82%;
+    width: 70%;
+    float: left;
+    padding: 20px;
+}
+
+.side_profile {
+    height: 100%;
+    width: 30%;
+    float: right;
+    padding: 20px;
+    background-color:#f5f5f5;
+}
+
+.btn_zone {
+    display: -webkit-box;
+}
+
+.btn-profile {
+    height: 44px;
+    margin: 5px;
+}
+
+.left_main_cam {
+    float: left;
+    height: 55%;
+    width: 50%;
+}
+
+.main_profile {
+    height: 100%;
+    width: 100%;
+}
+
+.list_patch {
+    float: right;
+    /* width: 30%; */
+    height: 80%;
+    /* padding: inherit; */
+    overflow: scroll;
+    /* display: grid; */
+}
+
+.img_patch {
+    max-width: 150px;
+    max-height: 150px;
+}
+
+.btn-patch {
+    width: 100%;
+}
+
+.galery {
+    padding-top: 100px;
+    padding-right: 10%;
+    padding-left: 10%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.galery_box {
+    width: 20%;
+    height: 20%;
+    border: solid;
+}
+
+.img_galery {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.img_galery_profile {
+    width: 100%;
+}
+
+.galery_img {
+    height: 100%;
+    width: 100%;
+}
+
+#galery_img {
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+}
+
+.div_home_galery {
+    height: 100%;
+}
+
+.img_home_galery {
+    width: 100%;
+    height: 100%;
+    max-height: 250px;
+    position: absolute;
+}
+
+.content_img_home_galery {
+    position: absolute;
+}
+
+.box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    overflow: scroll;
+}
+
+.image {
+    overflow: hidden;
+    width: calc(25% - 1rem);
+    min-width: 300px;
+    margin-bottom: 1rem;
+    position: relative;
+    height: 227px;
+    min-height: 227px;
+}
+
+.image:hover .div_like {
+    display:flex;
+}
+
+.image:hover .div_comment {
+    display:flex;
+}
+
+.div_like .div_comment{
+    display: none;
+}
+
+.div_like {
+    height: 100%;
+    position: absolute;
+    width: 50%;
+    bottom: 0;
+    background-color: #000000ad;
+    max-height: 250px;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.like_btn {
+    margin: auto;
+    color: white !important;
+    font-weight: bold;
+}
+
+.div_comment {
+    height: 100%;
+    position: absolute;
+    width: 50%;
+    bottom: 0;
+    background-color: #ffffffad;
+    max-height: 250px;
+    top: 0;
+    right: 0;
+    display: none;
+}
+
+.comment_btn {
+    margin: auto;
+    font-weight: bold;
+}
+
+.commentaire_box {
+    width: 100%;
+    height: 100%;
+    padding-left: 10%;
+    position: relative;
+    padding-right: 10%;
+}
+
+.com_box {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    position: relative;
+    float: right;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+
+.img_com_box {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    position: fixed;
+    padding-bottom: 10%;
+    float: left;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+
+#comment_box {
+    position: absolute;
+    height: 80%;
+    width: 20%;
+    background: aqua;
+    right: 0;
+    margin-bottom: 10%;
+}
+
+.btn_new_comment {
+    height: 40px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    font-size: large;
+    background: #eaeaea;
+    cursor: pointer;
+}
+
+#btn_close_com {
+    position: absolute;
+    right: 0;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.box_message{
+    margin-top: 20%;
+    position: absolute;
+    padding-left: 10%;
+    padding-right: 10%;
+    width: 100%;
+    height: 80%;
+    overflow: scroll;
+}
+
+.com_content {
+    margin-bottom: 30px;
+    font-size: 0.9em;
+    overflow: hidden;
+    flex-wrap: wrap;
+    background: azure;
+    padding: 10px;
+    word-wrap: break-word;
+}
+
+#right_box {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: scroll;
+    justify-content: space-around;
+}
+
+.form_param {
+    margin-bottom: 40px;
+}
+
+#startbutton {
+    display: none;
+}
+
+.btn {
+    margin: 10px;
+}
+
+@media (max-width: 1300px) {
+    .side_profile {
+        width: 100%;
+    }
+
+    .webcam_box{
+        width: 100%;
+    }
+}
+
+@media (max-width: 800px) {
+    .left_main_cam{
+        height: 390px;
+    }
+    .btn_zone{
+        width: 350px;
+        overflow: scroll;
+    }
+    #video{
+        width: 200%;
+    }
+}
+
+@media (min-width: 750px) and (max-width: 1000px){
+    .list_patch{
+        left: 150px;
+        top: 482px;
+        position: absolute;
+    }
+
+    .webcam_box{
+        position: relative;
+    }
+    
+    .btn_zone{
+        width: 179%;
+    }
+}
