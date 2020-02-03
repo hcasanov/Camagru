@@ -9,7 +9,7 @@ class User_connexion{
     {
         $this->data = $_POST;
         try {
-            $PDO = new PDO('mysql:host=db;port=3308;dbname=camagru;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+            $PDO = new PDO('mysql:host=172.23.0.1;port=3308;dbname=camagru;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
             $this->PDO = $PDO;
         } catch (Exception $e) {
             die('Erreur : ' . $e->getMessage());
@@ -26,6 +26,11 @@ class User_connexion{
         {
             $error['passwd'] = "Vous n'avez pas remplie votre mot de passe.";
         }
+        $mail = $data['mail'];
+        $REQUEST = $this->PDO->query("SELECT account_confirm FROM users WHERE mail = '$mail'");
+        $data = $REQUEST->fetchAll(PDO::FETCH_ASSOC);
+        if ($data[0]['account_confirm'] == 0)
+            $error['confirm'] = "Votre compte n'a pas été confirmé.";
         return ($error);
     }
 
@@ -105,5 +110,15 @@ class User_connexion{
             else
                 return (0);
         }
+    }
+
+    public function Change_passwd($mail)
+    {
+        $new_passwd = openssl_random_pseudo_bytes(5);
+        $new_passwd = bin2hex($new_passwd);
+        $hash = hash('whirlpool', $new_passwd);
+        $sql = $this->PDO->query("UPDATE users SET passwd = '$hash' WHERE mail = '$mail'");
+        $sql->closeCursor();
+        return ($new_passwd);
     }
 }

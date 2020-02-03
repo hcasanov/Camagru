@@ -3,14 +3,13 @@ session_start();
 require('../model/class_images.php');
 
 if ($_SESSION['patch'] != NULL) {
-    
     if (!file_exists('../../galery/' . $_SESSION['id'] . "_galery"))
         mkdir('../../galery/' . $_SESSION['id'] . '_galery');
 
     $token = openssl_random_pseudo_bytes(16);
     $token = bin2hex($token);
 
-    $data = explode(',', $_POST['submit']);
+    $data = explode(',', $_POST['image']);
     $data = $data[1];
 
     $data = str_replace(' ', '+', $data);
@@ -24,7 +23,7 @@ if ($_SESSION['patch'] != NULL) {
     $token = openssl_random_pseudo_bytes(16);
     $token = bin2hex($token);
 
-    $file = './galery/' . $_SESSION['id'] . '_galery/' . $token . '.jpeg';
+    $file = '../../galery/' . $_SESSION['id'] . '_galery/' . $token . '.jpeg';
     imagejpeg($im, $file); //Chemin vers la nouvelle img montée
     imagedestroy($im);
 

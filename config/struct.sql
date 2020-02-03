@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS users
     confirm_key VARCHAR(255),
     account_confirm INT(1),
     register_token VARCHAR(50),
-    mail_com INT,
+    mail_com INT DEFAULT '1',
     token_connect VARCHAR(255)
 );
 

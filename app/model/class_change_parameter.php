@@ -8,7 +8,7 @@ class Change_param
     public function __construct()
     {
         try {
-            $PDO = new PDO('mysql:host=db;port=3308;dbname=camagru;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+            $PDO = new PDO('mysql:host=172.23.0.1;port=3308;dbname=camagru;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
             $this->PDO = $PDO;
         } catch (Exception $e) {
             die('Erreur : ' . $e->getMessage());

@@ -21,7 +21,7 @@ session_start();
 <body>
     <!--------------------- Begin [Body content] ----------------------->
 
-    <!-- <?php require('app/controller/controller.php'); ?> -->
+    <?php require('app/controller/controller.php'); ?>
 
     <!--------------------- End [Body content] ----------------------->
     <footer id="footer">

@@ -67,13 +67,10 @@ function refresh_galery_home() {
 }
 
 function delete_galery() {
-    var parent = document.getElementById('right_box');
-    // var child = document.getElementsByClassName('image');
     const child = document.querySelectorAll('.image');
     for (const e of child) {
         e.remove();
     }
-    console.log(child);
 }
 
 function open_comment(src) {
@@ -119,6 +116,7 @@ function print_img(element) {
         data: 'src_like=' + element,
         dataType: 'text',
         success: function (data) {
+            console.log(data)
             if (data != "FAIL") {
                 if (data == false) {
                     like_btn.innerHTML = "LIKE";
@@ -128,7 +126,7 @@ function print_img(element) {
                 }
             }
             else {
-
+                console.log('error');
             }
         }
     });
@@ -192,8 +190,8 @@ function print_img(element) {
                     dataType: 'text',
                     data: { com: comment, new_com: 'true', img: element },
                     success: function (data) {
+                        console.log(data)
                         alert("Commentaire enregistré");
-                        document.location.reload(true);
                         open_comment(element);
                     }
                 });

@@ -6,7 +6,7 @@
         canvas = document.querySelector('#canvas'),
         photo = document.querySelector('#photo'),
         startbutton = document.querySelector('#startbutton'),
-        width = 100,
+        width = 400,
         height = 0;
 
     navigator.getMedia = (navigator.getUserMedia ||
@@ -49,20 +49,17 @@
         canvas.height = height;
         canvas.getContext('2d').drawImage(video, 0, 0, width, height);
         data = canvas.toDataURL('image/*');
-        console.log(data)
         $.ajax({
             url: './app/controller/controller_montage.php',
-            type: 'POST',
-            contentType: "application/x-www-form-urlencoded; charset=utf-8", 
-            dataType: "json",
+            type: 'post',
+            dataType: 'text',
             data: { image: data },
-            // success: function(e) {
-            //     console.log(e)
-            //     document.location.reload(true);
-            // }
+            success: function(e) {
+                console.log(e)
+                document.location.reload(true);
+            }
         });
-        // btn_webcam = document.getElementById('startbutton');
-        // btn_webcam.setAttribute('value', data);
+        
     }
 
 

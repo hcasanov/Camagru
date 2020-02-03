@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 class Image {
 
     private $PDO;
@@ -8,8 +9,8 @@ class Image {
     {
         $this->data = $_POST;
         try {
-            $PDO = new PDO('mysql:host=db;port=3308;dbname=camagru;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-            $PDO->exec(file_get_contents('../../config/struct.sql'));//
+            $PDO = new PDO('mysql:host=172.23.0.1;port=3308;dbname=camagru;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+            $PDO->exec(file_get_contents('../../config/struct.sql'));//../../config/struct.sql
             $this->PDO = $PDO;
         } catch (Exception $e) {
             die('Erreur : ' . $e->getMessage());

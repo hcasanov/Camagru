@@ -1,5 +1,6 @@
 <?php
 
+
 class   Create_account
 {
 
@@ -10,7 +11,7 @@ class   Create_account
     {
         $this->data = $_POST;
         try {
-            $PDO = new PDO('mysql:host=db;port=3308;dbname=camagru;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+            $PDO = new PDO('mysql:host=172.23.0.1;port=3308;dbname=camagru;charset=utf8', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
             $PDO->exec(file_get_contents('../../config/struct.sql'));
             $this->PDO = $PDO;
         } catch (Exception $e) {
@@ -123,9 +124,18 @@ class   Create_account
         $mail = $this->data['mail'];
         $sql = $this->PDO->query("UPDATE users SET register_token = '$token' WHERE mail = '$mail'");
         $sql->closeCursor();
-        $link_confirm = "http://localhost/app/controller/confirm_register.php?register_token=" . $token;
-        $mail_template = file_get_contents('../../public/mail/confirme.html');
+        $link_confirm = "http://localhost:8080/app/controller/confirm_register.php?register_token=" . $token;
+        $mail_template = "Pour confirmer votre compte camagru veuillez cliquer sur le lien '$link_confirm'";
 
         mail($this->data['mail'], 'Confirmation inscription Camagru', $mail_template);
+    }
+
+    public function Change_passwd($mail)
+    {
+        $new_passwd = openssl_random_pseudo_bytes(5);
+        $new_passwd = bin2hex($new_passwd);
+        $sql = $this->PDO->query("UPDATE users SET passwd = '$new_passwd' WHERE mail = '$mail'");
+        $sql->closeCursor();
+        return ($new_passwd);
     }
 }
